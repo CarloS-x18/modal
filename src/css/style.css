@@ -1,0 +1,120 @@
+/* font url */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+:root {
+    --font: 'Noto Sans JP', sans-serif;
+
+    --black: #000;
+    --white: #fff;  
+    --blue: #3bb5e9;
+
+    --bg-modal: #00b3ff4a;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:after, *:before {
+    box-sizing: inherit;
+}
+
+/* Globales */
+body {
+    font-family: var(--font);
+    height: 100vh;
+}
+h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+button {
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+/* hero */
+.hero {
+    height: 100%;
+    background-image: url('../img/bg.webp');
+    background-position: center center;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+}
+.hero__banner {
+    width: min(90%, 70rem);
+    background-color: var(--white);
+    border-radius: 10px;
+    text-align: center;
+    padding: 4rem 0;
+    box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.3);
+    
+}
+.banner__title {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    letter-spacing: 2px;
+    color: rgb(26, 26, 29);
+}
+@media (min-width: 720px) {
+    .banner__title {
+        font-size: 6rem;
+    }
+}
+.banner__button {
+    background-color: var(--blue);
+    border: 2px solid var(--blue);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    padding: .8rem 2rem;
+    letter-spacing: 2px;
+    color: white;
+    border-radius: 8px;
+}
+.banner__button:hover {
+    background-color: var(--white);
+    color: var(--blue);
+}
+
+/* modal */
+.modal {
+    background-color: var(--bg-modal);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -10;
+    visibility: hidden;
+    display: grid;
+    place-items: center;
+}
+.modal__container {
+    background-color: var(--white);
+    width: min(90%, 70rem);
+    height: 30vh;
+    text-align: center;
+    position: relative;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.3);
+}
+.modal__btn-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    transition: all .3s linear;
+}
+.modal__btn-close:hover {
+    transform: scale(1.2);
+}
+
+/* js classes */
+.open-view {
+    z-index: 10;
+    visibility: visible;
+}
+
